@@ -1,26 +1,23 @@
 import {
-	GET_SERIES_REQUEST_SEND,
-	GET_SERIES_REQUEST_FAIL,
-	GET_SERIES_REQUEST_SUCCESS
+	FETCH_SERIES_BEGIN,
+	FETCH_SERIES_SUCCESS,
+	FETCH_SERIES_FAILURE
 } from '../actions';
 
 const initialState = {
-	title: '',
-	description: '',
-	images: '',
-	releaseYear: '',
-	message: null,
-	isLoading: false,
+	items : [],
+	error: null,
+	loading: false,
 };
 
 const Series = (state = initialState,action) => {
 	switch (action.type) {
-		case GET_SERIES_REQUEST_SEND:
-			return { ...state, isLoading: true };
-		case GET_SERIES_REQUEST_FAIL:
-			return { ...state, message: action.message, isLoading: false };
-		case GET_SERIES_REQUEST_SUCCESS:
-			return { ...state,  message: null, isLoading: false, };
+		case FETCH_SERIES_BEGIN:
+			return { ...state, loading: true ,error:null };
+		case FETCH_SERIES_FAILURE:
+			return { ...state, loading: false, error: action.payload.error ,items: [] };
+		case FETCH_SERIES_SUCCESS:
+			return { ...state, loading: false, items: action.payload.series  };
 		default:
 			return state;
 	}
