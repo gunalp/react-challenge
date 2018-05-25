@@ -16,7 +16,7 @@ class HeaderComponent extends React.Component{
 							</div>
 						</div>
 						<div style={{ backgroundColor: '#474747', paddingLeft: 80, paddingRight: 80, paddingTop: 10, paddingBottom: 10 }}>
-							<span style={{ color: 'white', fontSize: 30, fontWeight: 'bold' }}>Popular Series</span>
+							<span style={{ color: 'white', fontSize: 30, fontWeight: 'bold' }}>Popular {this.props.title}</span>
 						</div>
 					</div>
 		);

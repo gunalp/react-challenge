@@ -28,7 +28,7 @@ class Movies extends Component {
 		return (
 
 			<div>
-				<HeaderComponent/>
+				<HeaderComponent title="Movies"/>
 				<main className="content" style={{ paddingTop: 20, paddingBottom: 20, paddingRight: 80, paddingLeft: 80 }}>
 					<div className="row">
 						<div className="col-md-12">

@@ -8,6 +8,10 @@ const initialState = {
 	items : [],
 	error: null,
 	loading: false,
+
+
+	headerTitle:""
+
 };
 
 const Movies = (state = initialState,action) => {
