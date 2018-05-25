@@ -26,8 +26,8 @@ ReactDOM.render(
 		<Router>
 			<div>
 				<Route exact path="/" component={App} />
-				<Route exact path="/series" component={Series} />
-				<Route exact path="/movies" component={Movies} />
+				<Route path="/series" component={Series} />
+				<Route path="/movies" component={Movies} />
 			</div>
 		</Router>
 	</Provider>, document.getElementById('root')

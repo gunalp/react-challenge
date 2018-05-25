@@ -1,26 +1,27 @@
 import {
+	FETCH_MOVIES_BEGIN,
+	FETCH_MOVIES_SUCCESS,
+	FETCH_MOVIES_FAILURE,
 	GET_MOVIES_REQUEST_SEND,
 	GET_MOVIES_REQUEST_FAIL,
 	GET_MOVIES_REQUEST_SUCCESS
 } from '../actions';
 
 const initialState = {
-	title: '',
-	description: '',
-	images: '',
-	releaseYear: '',
-	message: null,
-	isLoading: false,
+	items : [],
+	error: null,
+	loading: false,
 };
 
 const Movies = (state = initialState,action) => {
+
 	switch (action.type) {
-		case GET_MOVIES_REQUEST_SEND:
-			return { ...state, isLoading: true };
-		case GET_MOVIES_REQUEST_FAIL:
-			return { ...state, message: action.message, isLoading: false };
-		case GET_MOVIES_REQUEST_SUCCESS:
-			return { ...state,  message: null, isLoading: false, };
+		case FETCH_MOVIES_BEGIN:
+			return { ...state, loading: true ,error:null };
+		case FETCH_MOVIES_FAILURE:
+			return { ...state, loading: false, error: action.payload.error ,items: [] };
+		case FETCH_MOVIES_SUCCESS:
+			return { ...state, loading: false, items: action.payload.movies  };
 		default:
 			return state;
 	}

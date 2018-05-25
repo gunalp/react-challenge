@@ -8,14 +8,18 @@ export const GET_SERIES_REQUEST_SEND = 'GET_SERIES_REQUEST_SEND';
 export const GET_SERIES_REQUEST_SUCCESS = 'GET_SERIES_REQUEST_SUCCESS';
 export const GET_SERIES_REQUEST_FAIL = 'GET_SERIES_REQUEST_FAIL';
 
-export const GetMoviesFailed = (message) => ({
+export const FETCH_MOVIES_BEGIN   = 'FETCH_MOVIES_BEGIN';
+export const FETCH_MOVIES_SUCCESS = 'FETCH_MOVIES_SUCCESS';
+export const FETCH_MOVIES_FAILURE = 'FETCH_MOVIES_FAILURE';
+
+export const GetMoviesFailed = (error) => ({
 	type: GET_MOVIES_REQUEST_FAIL,
-	message
+	payload: { error }
 });
 
-export const GetMoviesSuccess = (message) => ({
+export const GetMoviesSuccess = (movies) => ({
 	type: GET_MOVIES_REQUEST_SUCCESS,
-	message
+	payload: { movies }
 });
 
 export const GetMoviesSend = () => {
@@ -57,4 +61,34 @@ export const GetSeriesSend = () => {
 			});
 	}
 };
+
+export const fetchMoviesBegin = () => ({
+	type: FETCH_MOVIES_BEGIN
+});
+
+export const fetchMoviesSuccess = movies => ({
+	type: FETCH_MOVIES_SUCCESS,
+	payload: { movies }
+});
+
+export const fetchMoviesError = error => ({
+	type: FETCH_MOVIES_FAILURE,
+	payload: { error }
+});
+
+
+export function fetchMovies() {
+	
+	return dispatch => {
+		dispatch(fetchMoviesBegin());
+		GetMovies()
+			.then(function (response) {
+				dispatch(fetchMoviesSuccess(response.data.result));
+			})
+			.catch(function (error) {
+				dispatch(fetchMoviesError(error));
+			});
+	}
+	
+}
 

@@ -1,6 +1,6 @@
 import axios from 'axios'
 const token = "denemeolduguicinstatic";
-const baseUrl = "localhost:6100/api";
+const baseUrl = "http://localhost:3100/api/v1";
 
 export const GetMovies = () => {
 	return axios.get(`${baseUrl}/movies`, {
