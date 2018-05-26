@@ -24,37 +24,32 @@ class Movies extends Component {
 			return <div>Loading...</div>;
 		}
 
-		const chunkedMovies = _.chunk(movies, 6)
+		const chunkedMovies = _.chunk(movies, 5)
 
 		return (
-
 			<div>
 				<HeaderComponent/>
 				<SubHeaderComponent title="Movies"/>
-				<main className="content" style={{ paddingTop: 20, paddingBottom: 20, paddingRight: 80, paddingLeft: 80 }}>
-					<div className="row">
-						<div className="col-md-12">
-							<span>
-								{
-									chunkedMovies.map((movies, i) => {
-										return (
-											<div className="row" key={i}>
-												{
-													movies.map((movie, j) => {
-														return (
-															<div className="col-md-2" key={j} style={{marginBottom :10}}>
-																<img src={movie.images.posterArt.url} width="150px" height="150px" style={{marginBottom :5}} alt=""/>
-																<p style={{fontSize:12,marginBottom :5}}>{movie.title}</p>
-															</div>
-														)
-													})
-												}
-											</div>
-										)
-									})
-								}
-              </span>
-						</div>
+				<main>
+					<div className="container">
+						{
+							chunkedMovies.map((movies, i) => {
+								return (
+									<div className="row" key={i}>
+										{
+											movies.map((movie, j) => {
+												return (
+													<div className="col-md-2-5" key={j}>
+														<img src={movie.images.posterArt.url} width="100%" alt=""/>
+														<div className="desc">{movie.title}</div>
+													</div>
+												)
+											})
+										}
+									</div>
+								)
+							})
+						}
 					</div>
 				</main>
 				<FooterComponent/>
