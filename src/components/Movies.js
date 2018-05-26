@@ -4,6 +4,7 @@ import HeaderComponent from './static/HeaderComponent';
 import FooterComponent from './static/FooterComponent';
 import {fetchMovies} from '../actions';
 import _ from 'lodash';
+import SubHeaderComponent from "./static/SubHeaderComponent";
 
 class Movies extends Component {
 
@@ -28,7 +29,8 @@ class Movies extends Component {
 		return (
 
 			<div>
-				<HeaderComponent title="Movies"/>
+				<HeaderComponent/>
+				<SubHeaderComponent title="Movies"/>
 				<main className="content" style={{ paddingTop: 20, paddingBottom: 20, paddingRight: 80, paddingLeft: 80 }}>
 					<div className="row">
 						<div className="col-md-12">
