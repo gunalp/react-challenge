@@ -5,27 +5,89 @@ class FooterComponent extends React.Component{
 
 	render() {
 		return (
-			<footer style={{ paddingTop: 20, paddingBottom: 20, paddingRight: 80, paddingLeft: 80 }}>
-				<div className="row">
-					Home | Terms and Conditions | Privacy Policy | Collection Statement | Help | Manage Account
-				</div>
-				<div className="row" style={{ marginTop: 20 }}>
-					Copyright (C)
-				</div>
-					<div className="row" style={{ marginTop: 50 }}>
-						<div className="col-md-6">
-								<img src="/assets/social/facebook-white.svg" alt="" style={{ width: 20, marginRight: 15 }}/>
-								<img src="/assets/social/instagram-white.svg" alt="" style={{ width: 30, marginRight: 15  }}/>
-								<img src="/assets/social/twitter-white.svg" alt="" style={{ width: 30 }}/>
-						</div>
-						<div className="col-md-6 pull-right">
-							<img className="fb" src="/assets/store/app-store.svg" alt="" style={{ width: 200 }}/>
-							<img className="fb" src="/assets/store/play-store.svg" alt="" style={{ width: 200 }}/>
-							<img className="fb" src="/assets/store/windows-store.svg" alt="" style={{ width: 170 }}/>
+			<footer>
+				<div className="container">
+					<div className="row">
+						<div className="col-md-12">
+							<div className="menu">
+								<ul>
+									<li>
+										<a href="/">Home</a>
+									</li>
+									<li>
+										<a href="/">Terms and Conditions</a>
+									</li>
+									<li>
+										<a href="/">Privacy Policy</a>
+									</li>
+									<li>
+										<a href="/">Collection Statement</a>
+									</li>
+									<li>
+										<a href="/">Help</a>
+									</li>
+									<li>
+										<a href="/">Manage Account</a>
+									</li>
+								</ul>
+							</div>
 						</div>
 					</div>
+					<div className="row">
+						<div className="col-md-12">
+							<div className="copyright">Copyright &copy; 2016 DEMO Streaming. All Rights Reserved.</div>
+						</div>
+					</div>
+					<div className="row">
+						<div className="col-md-4">
+							<div className="social">
+								<ul>
+									<li>
+										<a href="/">
+											<img src="/assets/facebook.png" alt="" />
+										</a>
+									</li>
+									<li>
+										<a href="/">
+											<img src="/assets/twitter.png" alt=""/>
+										</a>
+									</li>
+									<li>
+										<a href="/">
+											<img src="/assets/instagram.png" alt=""/>
+										</a>
+									</li>
+									<div className="clearfix"></div>
+								</ul>
+							</div>
+						</div>
+						<div className="col-md-2"></div>
+						<div className="col-md-6">
+							<div className="market">
+								<ul>
+									<li>
+										<a href="/">
+											<img src="/assets/apple.png" alt=""/>
+										</a>
+									</li>
+									<li>
+										<a href="/">
+											<img src="/assets/google.png" alt=""/>
+										</a>
+									</li>
+									<li>
+										<a href="/">
+											<img src="/assets/microsoft.png" alt=""/>
+										</a>
+									</li>
+									<div className="clearfix"></div>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			
 			</footer>
-
 		);
 	}
 
